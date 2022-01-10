@@ -14,7 +14,6 @@ const basics = {
         "One more thing worth mentioning is that JavaScript is a weak typed programming language. That means that we do not have to declare the type of variable we are creating and that there are implicit type transformations when we operate on different types of data.",
       ],
     },
-
     {
       id: "002",
       category: "JavaScript Basics",
@@ -23,7 +22,7 @@ const basics = {
       text: [
         "Const, let and var are three ways to declare data in JavaScript. Const and let have been added in ES6 version of JavaScript. They were added as a way to fix a problem with var, namely that var had lexical scope and was being hoisted to the top of the file, even if it was used in a block scope. As a result you would get undefined if the value was used, even if the block of code that declared it, never run.The code would run differently than was written which could lead to some problems.",
 
-        'To fix the problem described above, let and const were introduced. Using let, you can declare a variable on a block scope and it would not be accessible anywhere outside that scope. Const is similar, with the difference that if you declare primive types, they can not be changed. Trying to change a const will result in an error. Any code linter like "eslint" you use will highlight this. Using const on reference types like arrays, strings and objects allows you to change the contents of the data references by the const but doesn\'t allow you to change the reference itself.',
+        'To fix the problem described above, let and const were introduced. Using let, you can declare a variable on a block scope and it would not be accessible anywhere outside that scope. Const is similar, with the difference that if you declare primitive types, they can not be changed. Trying to change a const will result in an error. Any code linter like "eslint" you use will highlight this. Using const on reference types like arrays, strings and objects allows you to change the contents of the data references by the const but doesn\'t allow you to change the reference itself.',
 
         "One more thing to add, these days it is recommended to use const and let instead of var, so the code is more readable, consistent and free of hidden errors.",
       ],
@@ -78,7 +77,7 @@ const basics = {
       title: "this",
       dateAdded: "07/01/2022",
       text: [
-        "This is a special keywork in JS. It allows us to access the current context we find ourselves in. For example, on the top level, 'this' refers to the window object. Another example would be a method within an object. By using 'this', the method can access the object it resides in, its properties an methods.",
+        "This is a special keywork in JS. It allows us to access the current context we find ourselves in. For example, on the top level, 'this' refers to the window object. Another example would be a method within an object. By using 'this', the method can access the object it resides in, its properties and methods.",
 
         "Care must be taken when using 'this' because it can refer to different objects, depending on who calls the function that uses 'this'. In JavaScript this usually refers to the context from which the function is called. So if we call a method of an object from within another object, 'this' in that function now refers to the calling object, not the original object. We can change this behaviour by using a special function, namely \"bind\" to explicitly attach the 'this' object that we want, like this: someFunction.bind(this);.",
 
@@ -146,6 +145,107 @@ const basics = {
         "With dot notation we access a property like this: object.property. We use the name of the object followed by dot ,'.' followed by the name of the property. Dot notation is a bit stricter in the sense that we can use variables for the property name. Linters often prefer this type of notation, because of its strictness.",
 
         "Bracket notation uses square brackets instead of the dot and inside the brackets we use either a string or a string variable for the property name . It is less strict because we can define property names containing spaces or special characters, etc.",
+      ],
+    },
+    {
+      id: "012",
+      category: "JavaScript Basics",
+      title: "Strict Mode",
+      dateAdded: "10/01/2022",
+      text: [
+        "Strict mode is a directive you can use with JavaScript. To enable it', you just have to put 'strict mode' at the top of your file. You can also enable it in a block scope if required to have a more limited action. It was required to enable a more stricter environment in which programmers could not abuse certain features of JavaScript. It is somewhat obsolete with the advent of linters that gives the programmers plenty indications on how to write better code.",
+
+        "In strict mode, there are a few things that change regarding what are we allowed to do. Firstly, we can not define global variables. We have this situation when we forget to use var, let or const when defining a variable. JavaScript will just define it for us on the global scope. Use strict disables that, so we get an error. ",
+
+        "Another effect of using 'use strict' is that we can not use the delete keyword to delete variables or object properties. ",
+      ],
+    },
+    {
+      id: "013",
+      category: "JavaScript Basics",
+      title: "Anonymous Functions",
+      dateAdded: "10/01/2022",
+      text: [
+        "An anonymous function is a function for which we do not explicitly define a name. Instead we assign that function directly to a variable or passing it immediately as a parameter to another function.",
+
+        "We define anonymous functions in the same way as regular functions, but without a name: 'function() {...}'. Because you don't assign a name, the only way to reference it is by assigning it(actually its reference) to a variable or passing it as a parameter.",
+
+        "They are useful because it makes the code a bit shorter, where a function name is not necessary.",
+      ],
+    },
+    {
+      id: "014",
+      category: "JavaScript Basics",
+      title: "Callbacks",
+      dateAdded: "10/01/2022",
+      text: [
+        "Callbacks is a mechanism in JavaScript that allows the programmer to set up code to be use at a later time, for example when an event is triggered, like a click on a button. The way to use callbacks is to define a function and pass it as a parameter to another function (sometimes called a higher order function), to be 'called back' when necessary.",
+
+        "Callbacks can be defined in all the way you define a function: inline, assignment to variable, arrow function, anonymous definition.",
+
+        "Callbacks can sometimes be overused, a situation called 'callback hell'. To get around that, we can use asynchronous code, like Promises",
+      ],
+    },
+    {
+      id: "015",
+      category: "JavaScript Basics",
+      title: "Closures",
+      dateAdded: "10/01/2022",
+      text: [
+        "Closure is a term that in JavaScript refers to a function and the scope it is in, taken together. When a function is defined it has access to the variables inside it but also to all the variables of the context surrounding it, all the way to the top. So it captures the surrounding context at the moment of its creation.",
+
+        "Closures are useful in many ways, one of the most important is to simulate encapsulation in the OOP sense. You can do that by creating a function that returns another function. Only the  returned function has access to all the variables declared inside the outer function, therefore achieving encapsulation.",
+      ],
+    },
+    {
+      id: "016",
+      category: "JavaScript Basics",
+      title: "Naming Conventions",
+      dateAdded: "10/01/2022",
+      text: [
+        "Programming languages have generally a way of naming variables and a certain format for the name. In JavaScript The format is camelCase and the way of naming variables and functions is as follows: ",
+
+        "Firstly, the name has to be descriptive about what it refers to, to make the code easier to read. For example, Boolean variables are prefixed by 'is', or 'has' and then what it refers to: 'hasProperty', 'isInDarkMode'. Getter and setter methods can be prefixed by 'get' and 'set' followed by what variable it sets: 'getCounter', 'setPlayerName'. Functions  are usually prefixed by a descriptive verb: 'doSomeWork()', 'sendDataToDatabase()', 'authenticateUser()'. Constants can be capitalised and use underscore between words.",
+      ],
+    },
+    {
+      id: "017",
+      category: "JavaScript Basics",
+      title: "Ways of emptying arrays",
+      dateAdded: "10/01/2022",
+      text: [
+        "There a few ways to empty an array. Firstly you can reassign it to an empty array. However, this will not be an option if the array is set as a constant. Secondly you can set its length to 0. This is allowed in JavaScript. Third option is to use the splice method with the first argument as 0 (splice on 0).",
+
+        "You can also use a for loop or  wile loop to pop or shift the arrays, as long as the length is greater than 0.",
+      ],
+    },
+    {
+      id: "018",
+      category: "JavaScript Basics",
+      title: "MUL Function",
+      dateAdded: "10/01/2022",
+      text: [
+        "MUL function refers to calling a function with multiple parameters, each surrounded by its own parenthesis. It is used when we have a function that returns another function that return another function an so on, in a nested like fashion.  It is closely related to closures as each nested function has access only to the functions above it.",
+
+        "We call the top function with each parameter surrounded by parenthesis, and each parameter will be passed to the nested functions in order. The last parameter will be passed to the innermost returned function, and so on all the way to the top calling function.",
+      ],
+    },
+    {
+      id: "019",
+      category: "JavaScript Basics",
+      title: "Create Array",
+      dateAdded: "10/01/2022",
+      text: [
+        "There are a few ways to create an array. Firstly, you can initiate a variable with an empty array by setting it to a pair of square brackets. Also, you can create it from another array using the built-in functions 'map', 'filter' and 'reduce'(yes, you can return an array using reduce). Another way is to use the Array() constructor, although it is considered bad practice and better to be avoided.",
+      ],
+    },
+    {
+      id: "020",
+      category: "JavaScript Basics",
+      title: "Undefined and Null",
+      dateAdded: "10/01/2022",
+      text: [
+        "Undefined and null are both referring to empty variables. The distinction is that undefined refers to a variable that has never been assigned or doesn't exist even. Null is a assigned value, explicitly by the programmer. When we have a null value, we know that it has  intentionally been set to null. ",
       ],
     },
   ],
