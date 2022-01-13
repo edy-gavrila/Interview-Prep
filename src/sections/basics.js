@@ -248,6 +248,171 @@ const basics = {
         "Undefined and null are both referring to empty variables. The distinction is that undefined refers to a variable that has never been assigned or doesn't exist even. Null is a assigned value, explicitly by the programmer. When we have a null value, we know that it has  intentionally been set to null. ",
       ],
     },
+    {
+      id: "021",
+      category: "JavaScript Basics",
+      title: "Instanceof",
+      dateAdded: "10/01/2022",
+      text: [
+        "The 'instanceof' keyword checks if a variable is an instance of an certain object. It checks whether the prototype of a constructor appears anywhere in the prototype chain of an object.",
+
+        "Care must be taken when using 'instanceof' because we can get unexpected results sometimes. For example, testing a literal string with 'instanceof String' will return false. Also, 'instanceof Object' returns true for classes",
+      ],
+    },
+    {
+      id: "022",
+      category: "JavaScript Basics",
+      title: "IIFE",
+      dateAdded: "10/01/2022",
+      text: [
+        "IIFE, or immediately invoked function expression, is a anonymous function that is immediately invoked. It can be used to encapsulate a portion of code that runs immediately after being declared. It was popular with jQuery users. Also can be used to define modules",
+
+        "IIFE can also be used to perform initializations in a closed scope and then return the result, without the rest of the code having access to any of the internal workings.",
+      ],
+    },
+    {
+      id: "023",
+      category: "JavaScript Basics",
+      title: "Maintaining State & Local Storage",
+      dateAdded: "10/01/2022",
+      text: [
+        "There are a few ways to persist data  in an web application. U can use cookies, you can use 'local storage' or 'session storage'",
+
+        "You can use localStorage object in JavaScript to set items of data or get those items. The data in local storage will persist, even if the browser window is closed. All data has to be in string format so objects have to be 'stringified'. Session storage is similar to local storage but the data will be deleted when a session is closed, i.e. when browser window is closed.",
+      ],
+    },
+    {
+      id: "024",
+      category: "JavaScript Basics",
+      title: "HTML 5 APIs",
+      dateAdded: "10/01/2022",
+      text: [
+        "There are a lot of built-in features in most of the modern browsers that are generally known as API's. Some of them are the Web Storage API, the Geolocation API, the DOM API, Drag and Drop API, History API, Bluetooth API and many more.",
+
+        "There are also a wealth or third party APIs for every subject under the Sun. Weather APIs, Social Media APIs like Twitter API, Movie APIs, Flight Information APIs, etc, etc.",
+      ],
+    },
+    {
+      id: "025",
+      category: "JavaScript Basics",
+      title: "Object and Array De-structuring",
+      dateAdded: "11/01/2022",
+      text: [
+        "Object and Array de-structuring are, together with  the spread operator, some of the most important additions in ES6. It allows the programmer to write more clean, maintainable code, and greatly eases working with objects and arrays.",
+
+        "De-structuring is a short-hand notation for extracting values from an object or  array into variables. ",
+
+        "The syntax for array de-structuring is something like this: 'const [v1, v2, v3] = ourArray;' What this line of code does is taking the values from the array in the order of their index and assigning them to the newly created variables 'v1', 'v2', 'v3'.",
+
+        "For objects, de-structuring works similarly, with the exception that we have to supply the object key names as the name of the variables, like this: 'const {name, age, email} = personInfo;' where 'personInfo' is an object. You can also supply aliases to assign different names to the variables, like in the last ",
+
+        "De-structuring is a very important feature in ES6, something I personally use every day and using it makes the code shorter, more readable and easier to maintain.",
+      ],
+    },
+    {
+      id: "026",
+      category: "JavaScript Basics",
+      title: "Rest and Spread Operators",
+      dateAdded: "11/01/2022",
+      text: [
+        "'Spread' and 'rest' operators are more important features introduced in the ES6. 'Rest' is used less often but the 'spread' operator is something that will be used every day. Both are denoted by three dots added in front of a variable, typically an array or object.",
+
+        "The 'rest' operator is used in the context of passing arguments to a function. It organizes a unknown number of passed arguments into an array. Before the rest operator, We would have to work with the arguments object passes to every function, when having a unknown number of arguments passed. With the rest operator we can create an array of arguments directly from the passed arguments like this: 'function foo(...args){ args.forEach(arg, () => {//do something amazing})}'. Some developers do not like to use the rest operator as the need for using it might show that the code not  robust enough.",
+
+        "The spread operator is a very useful feature introduced in ES6 that allows us to unwrap an array of object, to be included as part of another array or object. It makes copying arrays or objects extremely easy: const firstObj = {//some properties}; secondObj = {...firstObj, //some additional properties}. Now the second object contains all the values contained in the first object. Spread operator is something I am a big fan of and find myself using it every time I work with arrays or objects.",
+      ],
+    },
+    {
+      id: "027",
+      category: "JavaScript Basics",
+      title: "Arrow Functions",
+      dateAdded: "11/01/2022",
+      text: [
+        "Arrow functions are another one of the most important features in ES6.Firstly, it provides an alternative, terser way of defining a function. This is important when writing code with lots of callbacks such as setting event listeners to DOM elements or when working with asynchronous code. ",
+
+        "Another important aspect of arrow functions is different behaviour with regard to the 'this' keyword. Arrow functions keep their original context in which they were defined when reference it through 'this'. This is in opposition with normally defined functions where the context changes, depending on where de function is called.",
+
+        "You can define an arrow function like this: 'const doSomething = () => {//some useful work};' It has to be assigned to a variable or passes as an argument to another function. If the function has only one line of code, the curly brackets can be omitted. Also the return keyword can be omitted for a single line function. I implicitly return whatever the value of the one line expression is. For functions with one parameter, event the braces can be ommited, like this: 'arg => arg + 1'. This function takes an argument, adds 1 and returns the result. ",
+      ],
+    },
+    {
+      id: "028",
+      category: "JavaScript Basics",
+      title: "NaN",
+      dateAdded: "11/01/2022",
+      text: [
+        "'NaN' is a special type in JavaScript and it is return when there is a operation with number that goes wrong and JavaScript is not able to carry out that operation. Example are 0 / 0, trying to divide by a string, conversion from string to number, etc. Any incompatible operation where a number is involved will result in 'NaN', being returned.",
+        "When using typeof on 'NaN', the result will be number. However, 'NaN' will not be equal with anything, including itself, so 'NaN === NaN' is false.",
+      ],
+    },
+    {
+      id: "029",
+      category: "JavaScript Basics",
+      title: "Undeclared vs Undefined",
+      dateAdded: "11/01/2022",
+      text: [
+        "A undeclared variable is a variable that has not been declared anywhere in our code and therefore does not exist. When trying to reference an undeclared variable, we generally get an 'ReferenceError'.",
+
+        "An undefined variable is a variable which has been declared, but it has not been initialised yet. Right after declaration, a variable is undefined. As soon as we assign it a value it will not be undefined anymore.",
+
+        "Inexistent properties of existing objects return undefined as well, so care must be taken when referencing object properties.",
+      ],
+    },
+    {
+      id: "030",
+      category: "JavaScript Basics",
+      title: "DOM Selectors",
+      dateAdded: "11/01/2022",
+      text: [
+        "There are a few ways to select a DOM element in JavaScript. We can select elements by their id with 'document.getElementById()'. We can select elements by class name with 'document.getElementsByClassName()', or by tag name with 'document.getElementsByTagName()'. We also have 'document.querySelector()' and 'document.querySelectorAll()'. Both of these select elements by a CSS selector and are notably slower than the previous methods.",
+      ],
+    },
+    {
+      id: "031",
+      category: "JavaScript Basics",
+      title: "Copy Objects",
+      dateAdded: "11/01/2022",
+      text: [
+        "Copying objects can be tricky, because in JavaScript they are reference types so a if to a variable it's assigned an object, the variable will hold a reference to the address in memory where the object is stored. If we copy the variable, we just end up duplicating the reference so both variable will point to the same object. Any change made using one variable will reflect in the other variable as well.",
+
+        "To make a 'deep copy' of an object, several ways are available. Firstly, you can 'stringify' the object and then parse it back using JSON methods. Secondly, you can use the spread operator: Create an empty object and then spread the object to be copied inside. Thirdly, you can use Object.assign() method, with an empty string and the object to be copied as parameters.",
+
+        "There is another way, namely to recursively parse the object and construct another object using a dedicated function.",
+      ],
+    },
+    {
+      id: "032",
+      category: "JavaScript Basics",
+      title: "Compare Two Objects",
+      dateAdded: "11/01/2022",
+      text: [
+        "Comparing two objects, assuming that we have two separate objects, is somewhat involved. We have to check that the objects have the same keys and the same values. One method would be to 'stringify' them and compare the resulting strings. This will work with one important caveat: The keys have to be in the same order.",
+
+        "Another method of comparing objects is to build a function that recursively iterates through all the properties and compares them against the other object. This function will get exponentially more complex as we try to tackle more and more corner cases.",
+      ],
+    },
+    {
+      id: "033",
+      category: "JavaScript Basics",
+      title: "Service Workers",
+      dateAdded: "11/01/2022",
+      text: [
+        "Service workers are scripts that run in the background, separate from the main web page. They allow features that makes the web app feel more like a native application, like responsiveness, offline mode, caching of resources",
+
+        "Service workers are very useful when trying to enhance user experience, cache resources, push notifications. It uses promise heavily. Service workers have an installation process or registration,  that needs to be done from the web page JS code.",
+      ],
+    },
+    {
+      id: "034",
+      category: "JavaScript Basics",
+      title: "removing Duplicates",
+      dateAdded: "11/01/2022",
+      text: [
+        "There are a few ways which we can go about removing duplicates from an array. Firstly, we can create a new set using the array as a source and that will automatically include only unique values. Then we can convert the set back to an array, if required.",
+
+        "Another option will be to iterate through the array and construct another array out of values that have not already been pushed to that array. In other words, for each element of the source array, we test if the destination array includes the element already and if not, we push it to the destination. Otherwise we ignore it.",
+      ],
+    },
   ],
 };
 
